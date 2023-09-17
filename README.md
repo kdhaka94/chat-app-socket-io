@@ -10,7 +10,7 @@ pnpm i
 Second, copy file named `env.local.template` to `env.local` (Linux, macOS):
 
 ```bash
-cp env.local.template env.local
+cp .env.local.template .env.local
 ```
 
 Windows:
