@@ -16,7 +16,7 @@ cp .env.local.template .env.local
 Windows:
 
 ```cmd
-copy env.local.template env.local
+copy .env.local.template .env.local
 ```
 
 Third, run the development server:
