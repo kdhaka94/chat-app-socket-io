@@ -50,8 +50,8 @@ export const SignUpForm = () => {
           method: "PUT",
           body: JSON.stringify(body),
           headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            Accept: "application/json",
+            "Content-Type": "application/json",
           },
         })
       ).json();
@@ -70,21 +70,19 @@ export const SignUpForm = () => {
   function onSubmit(values: z.infer<typeof formSchema>) {
     createAccountMutation.mutate(values, {
       onSuccess: async (data) => {
-        if (data.status === 200) {
+        if (data.token) {
           toast({
             variant: "default",
             title: "Success!!!",
             description: "Account Created Successfully",
           });
           localStorage.setItem("auth_token", "Bearer " + data.token);
-        router.push("/chat");
+          router.push("/chat");
         } else {
           toast({
             variant: "destructive",
             title: "Failure!!!",
-            description: data?.error
-              ? data.error
-              : "Failed to create account",
+            description: data?.error ? data.error : "Failed to create account",
           });
         }
       },
