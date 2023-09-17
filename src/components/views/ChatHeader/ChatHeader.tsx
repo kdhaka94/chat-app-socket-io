@@ -22,7 +22,7 @@ export const ChatHeader = ({ params }) => {
     ).json();
   });
   const handleLogout = () => {
-    localStorage.removeItem("auth-token");
+    localStorage.removeItem("auth_token");
     router.push("/");
   };
   return (
